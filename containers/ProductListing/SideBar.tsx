@@ -4,9 +4,9 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { deleteFilter, addFilter } from '@/lib/features/product/productSlice';
 
-const categories = ["Toys", "Curtains", "Bath & Shower", "Bedding", "Decoration", "Lighting", "Furniture"];
-const brands = ["Poliform", "Molteni & C", "Minotti", "BoConcept", "Knoll"];
-const availability = ["In Stock", "Out of Stock"];
+const categories = ["Fragrances", "Beauty", "Furniture", "Groceries"];
+const brands = ["Essence", "Chanel", "Calvin Klein", "Dior", "Gucci"];
+const availability = ["In Stock", "Low Stock"];
 
 const Sidebar: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -51,8 +51,8 @@ const Sidebar: React.FC = () => {
                 type="checkbox"
                 id={item}
                 name={item}
-                value={item}
-                checked={filters.category.includes(item)}
+                value={item.toLowerCase()}
+                checked={filters.category.includes(item.toLowerCase())}
                 onChange={(e) => handleCheckboxChange(e, "category")}
               />
               <label htmlFor={item}>{item}</label>
