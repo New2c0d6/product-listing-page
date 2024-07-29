@@ -1,5 +1,5 @@
 import { Product } from '@/types/Product';
-import React from 'react';
+import React, { useState } from 'react';
 
 
 interface ProductItemProps {
